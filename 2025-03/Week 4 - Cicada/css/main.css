@@ -1,0 +1,95 @@
+/********************************************************************************************************
+ *																										*
+ * File Name: main.css																					*
+ * Date: 2025-03-24																						*
+ * Description:																							*
+ * 	This file contains the stylesheet information required for the March CodePen project (Week 4).		*
+ * 	This file resets the layout of the page to ensure that browser defaults don't affect the 			*
+ *	appearance of the page. The file also contains the information to perform the isometric appear-		*
+ *	ance of the page. 																					*
+ *																										* 
+ ********************************************************************************************************/
+ 
+/* Override Defaults */
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 10px;
+}
+
+/* Blocking */
+
+body {
+	width: 100vw;
+	height: 100vh;
+	
+	background-color: red;
+	display: grid;
+	justify-content: center;
+}
+
+section.isometric-grid {
+	display: grid;
+	
+	/* -- Notice that this is a 16:9 aspect ratio -- */
+	width: 96vw;
+	height: 54vh;
+	
+	background-color: blue;
+	grid-template-rows: repeat(5, 20%);
+}
+
+/* -- Isometric Squares -- */
+
+div.cube {
+	width: 60vw;
+	height: 60vh;
+	
+	overflow: hidden;
+	grid-row: 3;
+	justify-self: center;
+	display: flex;
+}
+
+div.cube > div.face {
+	transform-origin: 0 0;
+	width: 10vw;
+	height: 10vh;
+	z-index: 1;
+}
+
+div.cube > div.face-front {
+	background-color: green;
+	transform: rotateX(0) rotateY(0deg) rotateZ(0deg);
+	z-index: 2;
+}
+
+div.cube > div.face-right {
+	background-color: white;
+	transform: rotateX(30deg) rotateY(0deg) rotateZ(45deg);
+}
+
+div.cube > div.face-left {
+	background-color: black;
+	transform: rotateX(30deg) rotateY(0deg) rotateZ(-45deg);
+}
+
+div.cube > div.face-rear {
+	background-color: grey;
+	transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+	z-index: 0;
+}
+
+div.cube > div.face-top {
+	background-color: yellow;
+	transform: rotateX(30deg) rotateY(0deg) rotateZ(-45deg);
+}
+
+div.cube > div.face-bottom {
+	background-color: orange;
+	transform: rotateX(30deg) rotateY(0deg) rotateZ(-45deg);
+}
