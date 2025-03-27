@@ -15,6 +15,7 @@
 * {
 	margin: 0;
 	padding: 0;
+	box-sizing: border-box;
 }
 
 html {
@@ -32,64 +33,23 @@ body {
 	justify-content: center;
 }
 
-section.isometric-grid {
+section.grid {
 	display: grid;
 	
 	/* -- Notice that this is a 16:9 aspect ratio -- */
-	width: 96vw;
-	height: 54vh;
+	width: 80vw;
+	height: 80vh;
 	
 	background-color: blue;
-	grid-template-rows: repeat(5, 20%);
+	grid-template-rows: repeat(100, 1%);
 }
 
-/* -- Isometric Squares -- */
-
-div.cube {
-	width: 60vw;
-	height: 60vh;
-	
-	overflow: hidden;
-	grid-row: 3;
-	justify-self: center;
-	display: flex;
-}
-
-div.cube > div.face {
-	transform-origin: 0 0;
-	width: 10vw;
-	height: 10vh;
-	z-index: 1;
-}
-
-div.cube > div.face-front {
-	background-color: green;
-	transform: rotateX(0) rotateY(0deg) rotateZ(0deg);
-	z-index: 2;
-}
-
-div.cube > div.face-right {
-	background-color: white;
-	transform: rotateX(30deg) rotateY(0deg) rotateZ(45deg);
-}
-
-div.cube > div.face-left {
-	background-color: black;
-	transform: rotateX(30deg) rotateY(0deg) rotateZ(-45deg);
-}
-
-div.cube > div.face-rear {
-	background-color: grey;
-	transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
-	z-index: 0;
-}
-
-div.cube > div.face-top {
-	background-color: yellow;
-	transform: rotateX(30deg) rotateY(0deg) rotateZ(-45deg);
-}
-
-div.cube > div.face-bottom {
-	background-color: orange;
-	transform: rotateX(30deg) rotateY(0deg) rotateZ(-45deg);
+.row {
+	width: 100%;
+	color: #FFF;
+	font-size: 1rem;
+	font-weight: bold;
+	text-align: center;
+	align-self: center;
+	display: grid;
 }
